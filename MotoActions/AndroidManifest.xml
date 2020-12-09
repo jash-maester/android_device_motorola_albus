@@ -24,18 +24,6 @@
         android:icon="@drawable/ic_gesture"
         android:persistent="true">
 
-        <provider
-            android:name=".MotoActionsSearchIndexablesProvider"
-            android:authorities="com.moto.actions"
-            android:multiprocess="false"
-            android:grantUriPermissions="true"
-            android:permission="android.permission.READ_SEARCH_INDEXABLES"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.content.action.SEARCH_INDEXABLES_PROVIDER" />
-            </intent-filter>
-        </provider>
-
         <receiver android:name="com.moto.actions.BootCompletedReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
@@ -48,16 +36,6 @@
                 <action android:name="ServiceWrapper"/>
             </intent-filter>
         </service>
-
-        <activity
-            android:name=".DozeSettingsActivity"
-            android:label="@string/ambient_display_title"
-            android:theme="@style/MotoActions">
-            <intent-filter>
-                <action android:name="com.moto.actions.DOZE_SETTINGS" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
 
         <activity
             android:name=".ActionsPreferenceActivity"
@@ -81,12 +59,6 @@
         <activity
             android:name=".GestureSettingsActivity"
             android:label="@string/device_gestures_title"
-            android:theme="@style/MotoActions">
-        </activity>
-
-        <activity
-            android:name=".FPGestureSettingsActivity"
-            android:label="@string/fingerprint_gestures_title"
             android:theme="@style/MotoActions">
         </activity>
 
