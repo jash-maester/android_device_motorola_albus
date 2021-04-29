@@ -16,10 +16,11 @@
 
 
 # Inherit from those products. Most specific first.
-$(call inherit-product, device/motorola/albus/full_albus.mk)
+#$(call inherit-product, device/motorola/albus/full_albus.mk)
+$(call inherit-product, build/make/target/product/halium.mk)
 
 # Inherit some common lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+#$(call inherit-product, vendor/lineage/config/aosp_base_telephony.mk)
 
 # Boot animation
 TARGET_SCREEN_WIDTH := 1080
