@@ -16,11 +16,18 @@
 
 
 # Inherit from those products. Most specific first.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 #$(call inherit-product, device/motorola/albus/full_albus.mk)
 $(call inherit-product, build/make/target/product/halium.mk)
 
 # Inherit some common lineage stuff.
 #$(call inherit-product, vendor/lineage/config/aosp_base_telephony.mk)
+
+# Inherit from albus device
+$(call inherit-product, device/motorola/albus/device.mk)
+
+# Inherit from vendor
+$(call inherit-product, vendor/motorola/albus/albus-vendor.mk)
 
 # Boot animation
 TARGET_SCREEN_WIDTH := 1080
@@ -48,4 +55,3 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 BUILD_FINGERPRINT := "motorola/albus/albus:8.0.0/OPS27.76-12-25/26:user/release-keys"
 TARGER_VENDOR := motorola
     # for specific
-$(call inherit-product, vendor/motorola/albus/albus-vendor.mk)
